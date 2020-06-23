@@ -3,59 +3,9 @@ package hufman;
 import java.util.List;
 
 public class Huffman {
-	/*
-	public int[] A = { 1 , 1, 1, 1, 1, 2 };
-	
-	public int[] G = {};
-	*/
-	
-/*
-	
-	public static boolean hasLeftParent( int[] arr , int position ) {
-		
-		int i =  ( position - 1 ) / 2 ;
-		
-		if( i < position && i > 0 ) {
-			return true ;
-		}else {
-			return false ;
-		}
-	}
 	
 	
-	
-	public static boolean hasRightParent( int[] arr , int position ) {
-		
-		int i =  ( position - 2 ) / 2 ;
-		
-		if( i < position && i > 0 ) {
-			return true ;
-		}else {
-			return false ;
-		}
-	}
-	
-	
-	
-	public static int getLeftParentPosition( int[] arr , int position ) {
-		
-		int i =  ( position - 1 ) / 2 ;
-		
-		return i ;
-	}
-	
-	
-	
-	public static int getrightParentPosition( int[] arr , int position ) {
-		
-		int i =  ( position - 2 ) / 2 ;
-		
-		return i ;
-	}
-	
-	*/
-	
-	//
+
 	
 	public static void switchElment( List<huffmanObject> arr , int firstPosition , int secondPositin ) {
 		
@@ -68,7 +18,7 @@ public class Huffman {
 	
 	
 	
-	public static int getRightChildPosition( List<huffmanObject> arr , int position ) {  //  List<huffmanObject> arr nuk duhet 
+	public static int getRightChildPosition(  int position ) {  //  List<huffmanObject> arr nuk duhet  // List<huffmanObject> arr ,
 		
 		int i =  ( position * 2 ) + 2 ;
 		
@@ -76,7 +26,7 @@ public class Huffman {
 	}
 	
 	
-	public static int getLeftChildPosition( List<huffmanObject> arr , int position ) {  // List<huffmanObject> arr nuk duhet 
+	public static int getLeftChildPosition(  int position ) {  // List<huffmanObject> arr nuk duhet  // List<huffmanObject> arr ,
 		
 		int i =  ( position * 2 ) + 1 ;
 		
@@ -89,8 +39,8 @@ public class Huffman {
 		
 		for( int i = 0 ; i < size/2 ; i++ ) {
 			
-			int rcp = getRightChildPosition( arr , i );
-			int lcp = getLeftChildPosition(  arr , i );
+			int rcp = getRightChildPosition(  i );  // arr ,
+			int lcp = getLeftChildPosition(   i );  // arr ,
 			
 			if( rcp < size &&  arr.get(rcp).getNodeWeght() < arr.get( i ).getNodeWeght()  ) {
 				switchElment( arr , rcp , i );
@@ -108,8 +58,8 @@ public class Huffman {
 		
 		for( int i = 0 ; i < size/2 ; i++ ) {
 			
-			int rcp = getRightChildPosition( arr , i );
-			int lcp = getLeftChildPosition(  arr , i );
+			int rcp = getRightChildPosition(  i );  // arr ,
+			int lcp = getLeftChildPosition(   i );  // arr ,
 			
 			if( rcp < size &&  arr.get(rcp).getNodeWeght() > arr.get( i ).getNodeWeght()  ) {
 				switchElment( arr , rcp , i );
@@ -169,11 +119,6 @@ public class Huffman {
 		}
 		
 		if( l != index ) {
-			/*
-			int temp = arr[ index ] ;
-			arr[ index ] = arr[ l ] ;
-			arr[ l ] = temp ;
-			*/
 			
 			switchElment( arr , l , index );
 			minHeapify( arr , size , l ) ;
