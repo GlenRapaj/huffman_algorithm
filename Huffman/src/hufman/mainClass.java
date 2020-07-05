@@ -22,7 +22,8 @@ public class mainClass {
 			
 		 h.huffman(A, G);
 
-		 
+		 Hashtable<String,String> hashtable =  h.iterateTranslateElements( G );
+		 System.out.println(hashtable);
 
 			System.out.println(  "\n" + "Displayyn data of array " + "\n" );
 		for( int i = 0 ; i < G.size() ; i++ ) {
