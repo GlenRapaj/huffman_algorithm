@@ -183,5 +183,25 @@ public class Huffman {
 	}
 	
 	
+		public Hashtable<String, String> iterateTranslateElements( List<huffmanObject> G  ) {
+		
+		Hashtable<String,String> hashtable = new Hashtable<String,String>();
+		
+		
+		for( int i = 0 ; i < G.size() ; i++ ) {
+
+			if( !G.get( i ).getNodeName().equalsIgnoreCase( "MidleNode" ) ) {
+				
+				// hashtable.put( encodetCharacter( i ) , G.get( i ).getNodeName() );
+				hashtable.put( G.get( i ).getNodeName() , encodetCharacter( i )  );
+			}
+		}
+		return hashtable ;
+		
+	}
+	
+	
+	
+	
 
 }
