@@ -1,6 +1,6 @@
 package hufman;
 
-public class huffmanObject {
+public class HuffmanNode{
 
 		public int vlNr ;
 	public char c ;
